@@ -469,7 +469,7 @@ function NostalgyMailSubject() {
  var s = gDBView.hdrForFirstSelectedMessage.mime2DecodedSubject.toLowerCase();
  var old;
 
- do { old = s; s = s.replace(/^\[fwd:|^fwd:|^fw:|^re:|^ |^e :|\]$/g, ""); }
+ do { old = s; s = s.replace(/^\[go-nuts\]|\[fwd:|^fwd:|^fw:|^re:|^Re:|^ |^e :|\]$/g, ""); }
  while (s != old);
 
  // do { old =s; s = s.replace(/^\[.*\]/g,""); } while (s != old);
@@ -677,10 +677,8 @@ function NostalgyIsThreadPaneFocused() {
 }
 
 function NostalgyScrollMsg(d) {
- if (NostalgyIsThreadPaneFocused()) {
   var b = NostalgyEBI("messagepane").contentDocument.getElementsByTagName("body")[0];
   if (b) { b.scrollTop += d; }
- }
 }
 
 
