@@ -469,7 +469,7 @@ function NostalgyMailSubject() {
  var s = gDBView.hdrForFirstSelectedMessage.mime2DecodedSubject.toLowerCase();
  var old;
 
- do { old = s; s = s.replace(/^\[go-nuts\]|\[fwd:|^fwd:|^fw:|^re:|^Re:|^ |^e :|\]$/g, ""); }
+ do { old = s; s = s.replace(/^\[[^\]]+\]|\[fwd:|^fwd:|^fw:|^re:|^Re:|^ |^e :|\]$/g, ""); }
  while (s != old);
 
  // do { old =s; s = s.replace(/^\[.*\]/g,""); } while (s != old);
